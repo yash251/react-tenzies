@@ -5,12 +5,11 @@ function App() {
 
   function allNewDice() {
     const newDice = [];
-    for(let i = 0; i < 10; i++) {
-      newDice.push(Math.floor(Math.random() * 6) + 1)
-    } 
+    for (let i = 0; i < 10; i++) {
+        newDice.push(Math.ceil(Math.random() * 6)); //ceil starts from 1
+    }
     return newDice;
   }
-  console.log(allNewDice())
 
   return (
     <main>
