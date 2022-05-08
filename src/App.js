@@ -1,7 +1,10 @@
 import './style.css';
-import Die from "./Die"
+import Die from "./Die";
+import { useState } from 'react';
 
 function App() {
+
+  const [dice, setDice] = useState(allNewDice());
 
   function allNewDice() {
     const newDice = [];
@@ -11,19 +14,12 @@ function App() {
     return newDice;
   }
 
+  const diceElements = dice.map(die => <Die value={die} />)
+
   return (
     <main>
         <div className='dice-container'>
-            <Die value="1" />
-            <Die value="2" />
-            <Die value="3" />
-            <Die value="4" />
-            <Die value="5" />
-            <Die value="6" />
-            <Die value="1" />
-            <Die value="2" />
-            <Die value="3" />
-            <Die value="4" />
+            {diceElements}
         </div>
       </main>
   );
