@@ -2,7 +2,7 @@ import './style.css';
 import Die from "./Die";
 import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
-import Confetti from "react-confetti";
+import Confetti from "react-confetti"; //npm i react-confetti --legacy-peer-deps
 
 function App() {
 
