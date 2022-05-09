@@ -9,7 +9,13 @@ function App() {
   const [tenzies, setTenzies] = useState(false);
 
   useEffect(() => {
-    console.log("Dice State changed")
+    const allHeld = dice.every(die => die.isHeld);
+    const firstValue = dice[0].value;
+    const allSameValue = dice.every(die => die.value === firstValue);
+    if(allHeld && allSameValue) {
+      setTenzies(true);
+      console.log("You Won!!!")
+    }
   }, [dice]);
 
   function generateNewDie() {
